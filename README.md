@@ -1,0 +1,1 @@
+# Simple vagrant template for trusty64 with i3 windows manager
