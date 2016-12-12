@@ -89,15 +89,6 @@ noroot() {
 
 profile_setup() {
   # Copy custom dotfiles and bin file for the vagrant user from local
-  cp "/srv/config/bash_profile" "/home/vagrant/.bash_profile"
-  cp "/srv/config/bash_aliases" "/home/vagrant/.bash_aliases"
-  cp "/srv/config/vimrc" "/home/vagrant/.vimrc"
-  cp "/srv/config/dircolors" "/home/vagrant/.dircolors"
-
-  echo " * Copied /srv/config/bash_profile                      to /home/vagrant/.bash_profile"
-  echo " * Copied /srv/config/bash_aliases                      to /home/vagrant/.bash_aliases"
-  echo " * Copied /srv/config/vimrc                             to /home/vagrant/.vimrc"
-  echo " * Copied /srv/config/dircolors                             to /home/vagrant/.dircolors"
 
   # If a bash_prompt file exists in the VVV config/ directory, copy to the VM.
   if [[ -f "/srv/config/bash_prompt" ]]; then
@@ -182,10 +173,6 @@ install_dotfiles() {
 ### SCRIPT
 #set -xv
 
-# Profile_setup
-echo "Bash profile setup and directories."
-profile_setup
-# check network connection
 network_check
 # Package and Tools Install
 echo " "
